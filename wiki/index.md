@@ -10,8 +10,10 @@ Welcome to the LangGraph learning repository wiki. This wiki tracks the progress
 4. [Assignment 1: Multi-Operation Node](md/assignment_1.md) - Applying logic within a single node.
 5. [Lesson 3: Sequential Graphs and Visualization](md/l3_sequential_nodes.md) - Multiple nodes and ASCII diagrams.
 6. [Lesson 4: Conditional Edges and Routing](md/l4_conditional_node.md) - Branching logic and dynamic node selection.
+7. [Assignment 2: Multi-Stage Routing](md/assignment_2.md) - Chaining multiple routers and operation nodes.
 
 ## Core Concepts
 - [State Management](md/concept_state.md)
 - [StateGraph & Compilation](md/concept_stategraph.md)
 - [Conditional Edges](md/concept_conditional_edges.md)
+- [Graph Visualization](md/concept_visualization.md)

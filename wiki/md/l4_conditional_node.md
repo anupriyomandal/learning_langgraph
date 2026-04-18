@@ -57,4 +57,4 @@ The graph structure looks like this:
 - [State Management](concept_state.md)
 
 ---
-[Back: Lesson 3: Sequential Nodes](l3_sequential_nodes.md) | [Next: TBD](index.md)
+[Back: Lesson 3: Sequential Nodes](l3_sequential_nodes.md) | [Next: Assignment 2: Multi-Stage Routing](assignment_2.md)
