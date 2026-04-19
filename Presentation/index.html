@@ -261,7 +261,7 @@
 <body>
 
     <div class="progress" id="progress"></div>
-    <div class="slide-number" id="counter">01 / 14</div>
+    <div class="slide-number" id="counter">01 / 15</div>
 
     <div class="deck" id="deck">
         <!-- Slide 1: Intro -->
@@ -457,7 +457,33 @@ workflow.add_edge("start", "worker")</code></pre>
             </div>
         </section>
 
-        <!-- Slide 12: Case Study: ReAct Agent -->
+        <!-- Slide 12: Process Flow: ReAct -->
+        <section class="slide">
+            <div class="content">
+                <div class="chip">Workflow PFD</div>
+                <h2>ReAct Execution Steps</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>1. model_node</h3>
+                        <p>Generates <code>AIMessage</code> with optional <code>tool_calls</code>.</p>
+                    </div>
+                    <div class="card">
+                        <h3>2. Router</h3>
+                        <p>Checks if tool calls exist in the last message.</p>
+                    </div>
+                    <div class="card">
+                        <h3>3. tool_node</h3>
+                        <p>Executes Python functions and returns <code>ToolMessage</code>.</p>
+                    </div>
+                    <div class="card">
+                        <h3>4. Recurrence</h3>
+                        <p>Loops back to the Brain with new observations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 13: Case Study: ReAct Agent -->
         <section class="slide">
             <div class="content">
                 <div class="chip">Autonomous Agents</div>
@@ -475,7 +501,7 @@ workflow.add_edge("start", "worker")</code></pre>
             </div>
         </section>
 
-        <!-- Slide 13: Decoupling Frameworks -->
+        <!-- Slide 14: Decoupling Frameworks -->
         <section class="slide">
             <div class="content">
                 <div class="chip">Pure LangGraph</div>
@@ -494,7 +520,7 @@ workflow.add_edge("start", "worker")</code></pre>
             </div>
         </section>
 
-        <!-- Slide 14: Visualization -->
+        <!-- Slide 15: Visualization -->
         <section class="slide">
             <div class="content">
                 <div class="chip">Debugging</div>
