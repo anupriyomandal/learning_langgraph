@@ -9,13 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0a0a0a;
-            --surface: #121212;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0a0;
-            --accent: #ffffff;
-            --border: rgba(255, 255, 255, 0.1);
-            --glass: rgba(255, 255, 255, 0.03);
+            --bg: #ffffff;
+            --surface: #f9f9f9;
+            --text-primary: #000000;
+            --text-secondary: #555555;
+            --accent: #000000;
+            --border: rgba(0, 0, 0, 0.1);
+            --glass: rgba(0, 0, 0, 0.02);
             --transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
@@ -60,7 +60,7 @@
             align-items: center;
             padding: 4rem;
             position: relative;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
         }
 
         .slide::before {
@@ -70,7 +70,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.02) 0%, transparent 70%);
+            background: radial-gradient(circle at 50% 50%, rgba(0,0,0,0.01) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -142,7 +142,7 @@
 
         /* Code Blocks */
         pre {
-            background: var(--surface);
+            background: #ffffff;
             padding: 2rem;
             border-radius: 12px;
             border: 1px solid var(--border);
@@ -150,11 +150,11 @@
             font-size: 1.1rem;
             overflow-x: auto;
             margin-top: 2rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
         code {
-            color: #d1d1d1;
+            color: #333333;
         }
 
         /* Components */
@@ -178,16 +178,18 @@
         }
 
         .card {
-            background: var(--surface);
+            background: #ffffff;
             padding: 2.5rem;
             border-radius: 24px;
             border: 1px solid var(--border);
             transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
         }
 
         .card:hover {
-            border-color: rgba(255,255,255,0.3);
+            border-color: rgba(0,0,0,0.3);
             transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.06);
         }
 
         .card h3 {
@@ -210,18 +212,19 @@
             height: 60px;
             border-radius: 50%;
             border: 1px solid var(--border);
-            background: var(--surface);
-            color: white;
+            background: white;
+            color: black;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
             transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .btn:hover {
             background: var(--text-primary);
-            color: var(--bg);
+            color: white;
         }
 
         .progress {
@@ -245,7 +248,6 @@
             color: var(--text-secondary);
             font-weight: 600;
         }
-
     </style>
 </head>
 <body>
