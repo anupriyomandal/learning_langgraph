@@ -45,4 +45,4 @@ The resulting graph demonstrates a symmetric, multi-stage structure:
 - [Graph Visualization](concept_visualization.md)
 
 ---
-[Back: Lesson 4: Conditional Edges](l4_conditional_node.md) | [Next: Wiki Index](../index.md)
+[Back: Lesson 4: Conditional Edges](l4_conditional_node.md) | [Next: Lesson 5: Looping Graphs](l5_looping_graphs.md)
