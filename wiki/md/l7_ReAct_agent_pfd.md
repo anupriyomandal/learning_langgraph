@@ -6,26 +6,39 @@ This document provides a detailed breakdown of the internal workflow and state t
 
 ```mermaid
 graph TD
-    START((START)) --> MN[model_node]
+    %% Node Definitions
+    START((START))
+    END((END))
+    MN["<b>model_node</b><br/><i>(The Brain)</i>"]
+    TN["<b>tool_node</b><br/><i>(The Hands)</i>"]
+    ROUTER{"<b>tools_condition</b><br/><i>(The Router)</i>"}
+
+    %% Flow and Labels
+    START -- "Initial Query" --> MN
     
-    MN --> ROUTER{tools_condition}
+    MN -- "AIMessage" --> ROUTER
     
-    ROUTER -- "Has Tool Calls" --> TN[tool_node]
-    ROUTER -- "No Tool Calls" --> END((END))
+    ROUTER -- "Has Tool Calls" --> TN
+    ROUTER -- "Direct Answer" --> END
     
-    TN --> MN
-    
-    subgraph "Reasoning Loop"
-    MN
-    ROUTER
-    TN
+    TN -- "ToolMessage" --> MN
+
+    %% Styling
+    subgraph "Reasoning & Action Loop"
+        MN
+        ROUTER
+        TN
     end
+
+    %% Color Palette
+    style START fill:#9333ea,stroke:#fff,stroke-width:2px,color:#fff
+    style END fill:#9333ea,stroke:#fff,stroke-width:2px,color:#fff
+    style MN fill:#4f46e5,stroke:#fff,stroke-width:2px,color:#fff
+    style TN fill:#0d9488,stroke:#fff,stroke-width:2px,color:#fff
+    style ROUTER fill:#e11d48,stroke:#fff,stroke-width:2px,color:#fff
     
-    style START fill:#f9f,stroke:#333,stroke-width:2px
-    style END fill:#f9f,stroke:#333,stroke-width:2px
-    style MN fill:#bbf,stroke:#333,stroke-width:2px
-    style TN fill:#bfb,stroke:#333,stroke-width:2px
-    style ROUTER fill:#fbb,stroke:#333,stroke-width:2px
+    %% Subgraph Styling
+    style "Reasoning & Action Loop" fill:#f8fafc,stroke:#cbd5e1,stroke-dasharray: 5 5
 ```
 
 ## 2. Step-by-Step Execution Details
