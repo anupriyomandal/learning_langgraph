@@ -24,32 +24,30 @@ def get_query(state: AgentState) -> AgentState:
     state['query'] = user_input
     return state
 
+from rich.live import Live
+
 def gpt_reponse(state: AgentState) -> AgentState:
-    """Generates a streaming response using OpenAI, maintaining history."""
-    # Prepare messages including history
+    """Generates a streaming response using OpenAI and renders it as Markdown in real-time."""
     messages = state.get('messages', [])
     messages.append({"role": "user", "content": state['query']})
     
     console.print("\n[bold green]Assistant:[/bold green]")
     
-    # Call LLM with streaming enabled
-    stream = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=messages,
-        stream=True
-    )
-    
     full_response = ""
-    for chunk in stream:
-        if chunk.choices[0].delta.content:
-            content = chunk.choices[0].delta.content
-            full_response += content
-            print(content, end="", flush=True)
+    # Use Rich Live to render markdown as it streams
+    with Live(Markdown(full_response), console=console, refresh_per_second=10) as live:
+        stream = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=messages,
+            stream=True
+        )
+        
+        for chunk in stream:
+            if chunk.choices[0].delta.content:
+                full_response += chunk.choices[0].delta.content
+                live.update(Markdown(full_response))
     
-    print() # New line after stream ends
     state['response'] = full_response
-    
-    # Update history in state
     messages.append({"role": "assistant", "content": full_response})
     state['messages'] = messages
     return state
