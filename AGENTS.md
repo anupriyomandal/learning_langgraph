@@ -44,5 +44,11 @@ Before documenting a lesson, always execute the Python script using the local vi
 ./.venv/bin/python3 <filename>.py
 ```
 
+### 5. Maintain the Presentation
+A monochromatic HTML/CSS presentation is stored in `Presentation/index.html`.
+- **New Slides**: When a significant new concept or lesson is added, consider adding a new slide to the presentation.
+- **Visual Consistency**: Ensure the presentation maintains its minimalist, monochromatic aesthetic.
+- **Linkage**: Ensure the presentation remains linked from the Wiki Index.
+
 ---
 *This file serves as a guide for AI agents assisting in this repository.*
