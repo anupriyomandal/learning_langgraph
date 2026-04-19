@@ -31,33 +31,58 @@ graph TD
 ## 2. Step-by-Step Execution Details
 
 ### Step 1: Initialization (START)
-- **Input**: The user provides an initial message (e.g., `"Add 40 + 12"`).
-- **State**: The `AgentState` is initialized with a list of messages containing the `HumanMessage`.
+- **Input**: The user provides an initial message.
+- **State**: The `AgentState` is initialized.
+```python
+class AgentState(TypedDict):
+    messages: Annotated[Sequence[BaseMessage], add_messages]
+```
 
 ### Step 2: Reasoning (model_node)
 - **Action**: The graph executes the `model_call` function.
 - **LLM Input**: Receives the full conversation history (System Prompt + Messages).
-- **LLM Output**: The model decides to either answer directly or call a tool. 
-- **State Update**: The `AIMessage` (potentially containing `tool_calls`) is appended to the `messages` list via the `add_messages` reducer.
+```python
+def model_call(state : AgentState) -> AgentState:
+    system_prompt = SystemMessage(content = "You are an AI assistant...")
+    response = model.invoke([system_prompt] + state['messages'])
+    return {"messages" : [response]}
+```
 
 ### Step 3: Routing (tools_condition)
-- **Action**: The conditional edge (Router) inspects the last message in the state.
-- **Decision**:
-    - **IF** `message.tool_calls` exists: Route to `tool_node`.
-    - **ELSE**: Route to `END`.
+- **Action**: The conditional edge (Router) inspects the last message.
+```python
+# Prebuilt routing logic used in the graph
+workflow.add_conditional_edges(
+    "model_node",
+    should_continue, # Custom router or tools_condition
+    {"continue": "tool_node", "end": END}
+)
+```
 
 ### Step 4: Execution (tool_node)
-- **Action**: The `ToolNode` (from `langgraph.prebuilt`) takes over.
-- **Processing**: It parses the `name` and `args` from the LLM's request and executes the corresponding Python function (e.g., `add(40, 12)`).
-- **State Update**: A `ToolMessage` containing the result (e.g., `52`) and the `tool_call_id` is appended to the state.
+- **Action**: The `ToolNode` executes requested Python functions.
+```python
+# Tools bound to the node
+tools = [add, subtract, divide, multiply]
+workflow.add_node("tool_node", ToolNode(tools = tools))
+```
 
 ### Step 5: Recurrence (Loop)
-- **Action**: The graph flows from `tool_node` back to `model_node`.
-- **Reasoning**: The LLM now sees its previous thought, the tool request, and the **result** of that tool. It can now reason about the next step (e.g., multiplying the result).
+- **Action**: The graph flows back to `model_node`.
+```python
+# The loop edge
+workflow.add_edge("tool_node", "model_node")
+```
 
 ### Step 6: Completion (END)
-- **Action**: Once the LLM determines it has all the information, it returns a plain text `AIMessage`.
-- **Router**: Detects no tool calls and routes the graph to the terminal `END` node.
+- **Action**: The graph terminates when no tool calls are present.
+```python
+def should_continue(state : AgentState) -> str:
+    response = state['messages'][-1]
+    if not response.tool_calls:
+        return "end"
+    return "continue"
+```
 
 ---
 ## 3. State Evolution Example
