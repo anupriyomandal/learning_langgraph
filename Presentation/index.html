@@ -261,7 +261,7 @@
 <body>
 
     <div class="progress" id="progress"></div>
-    <div class="slide-number" id="counter">01 / 12</div>
+    <div class="slide-number" id="counter">01 / 13</div>
 
     <div class="deck" id="deck">
         <!-- Slide 1: Intro -->
@@ -437,26 +437,45 @@ workflow.add_edge("start", "worker")</code></pre>
             </div>
         </section>
 
-        <!-- Slide 11: ReAct Agents -->
+        <!-- Slide 11: ReAct Framework -->
         <section class="slide">
             <div class="content">
-                <div class="chip">Reason + Act</div>
-                <h2>Lesson 7: ReAct Agent</h2>
-                <p>Building autonomous agents that can think, act, and observe iteratively.</p>
+                <div class="chip">Philosophy</div>
+                <h2>The ReAct Framework</h2>
+                <p>Reason + Act: A symbiotic relationship between thinking and doing.</p>
                 <div class="grid">
                     <div class="card">
-                        <h3>Tool Calling</h3>
-                        <p>Using <code>bind_tools</code> to allow the LLM to request function execution.</p>
+                        <h3>Reasoning</h3>
+                        <p>The model generates a thought process explaining what it needs to find out.</p>
                     </div>
                     <div class="card">
-                        <h3>ToolNode</h3>
-                        <p>Automating action execution with prebuilt nodes and conditional routing.</p>
+                        <h3>Acting</h3>
+                        <p>The model executes an action (tool) to interact with the environment.</p>
+                    </div>
+                </div>
+                <p><em>The cycle repeats: Observe result → Reason again → Act.</em></p>
+            </div>
+        </section>
+
+        <!-- Slide 12: Case Study: ReAct Agent -->
+        <section class="slide">
+            <div class="content">
+                <div class="chip">Autonomous Agents</div>
+                <h2>Lesson 7</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Tool Binding</h3>
+                        <p>Using <code>bind_tools</code> to expose python functions to the LLM's brain.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Looping</h3>
+                        <p>Conditional edges routing between the Brain and the ToolNode.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 12: Visualization -->
+        <!-- Slide 13: Visualization -->
         <section class="slide">
             <div class="content">
                 <div class="chip">Debugging</div>

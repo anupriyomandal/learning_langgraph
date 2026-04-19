@@ -27,6 +27,7 @@ Welcome to the LangGraph learning repository wiki. This wiki tracks the progress
 - [Loops (Recurrent Graphs)](md/concept_loops.md)
 - [Message Types](md/concept_messages.md) - BaseMessage, SystemMessage, ToolMessage.
 - [add_messages (Reducer)](md/concept_add_messages.md) - Managing chat history state.
+- [ReAct Framework](md/concept_react_agent.md) - The Reason + Act architectural pattern.
 
 ## Reference
 - [StateGraph API Reference](md/stategraph_api.md)
