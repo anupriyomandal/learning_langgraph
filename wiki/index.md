@@ -30,6 +30,10 @@ Welcome to the LangGraph learning repository wiki. This wiki tracks the progress
 - [Message Types](md/concept_messages.md) - BaseMessage, SystemMessage, ToolMessage.
 - [add_messages (Reducer)](md/concept_add_messages.md) - Managing chat history state.
 - [ReAct Framework](md/concept_react_agent.md) - The Reason + Act architectural pattern.
+- [Tool Binding](md/concept_tool_binding.md) - Making LLMs aware of Python functions.
+- [ToolNode](md/concept_tool_node.md) - Executing tool calls automatically.
+- [Human-in-the-Loop](md/concept_human_in_the_loop.md) - Patterns for interactive agents.
+- [Streaming vs. Invocation](md/concept_streaming.md) - Handling real-time updates and output.
 
 ## Reference
 - [StateGraph API Reference](md/stategraph_api.md)
