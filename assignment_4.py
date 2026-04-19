@@ -99,8 +99,26 @@ workflow.add_edge("display_response", "get_query")
 # Compile
 app = workflow.compile()
 
+# --- Visualization ---
+def visualize_graph():
+    print("\nGenerating Workflow Diagram...")
+    try:
+        # Save PNG
+        png_data = app.get_graph().draw_mermaid_png()
+        with open("assignment_4_graph.png", "wb") as f:
+            f.write(png_data)
+        print("Success: Diagram saved to 'assignment_4_graph.png'")
+    except Exception as e:
+        print(f"PNG Generation failed: {e}")
+    
+    # Always Print ASCII
+    print("\nWorkflow Structure (ASCII):")
+    app.get_graph().print_ascii()
+
 if __name__ == "__main__":
-    console.print("[bold reverse] Interactive LangGraph Chatbot [/bold reverse]")
+    visualize_graph()
+    
+    console.print("\n[bold reverse] Interactive LangGraph Chatbot [/bold reverse]")
     console.print("Type 'exit' to quit.\n")
     
     # Initialize state

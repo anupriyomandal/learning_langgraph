@@ -36,8 +36,7 @@ def markdown_viewer(state: AgentState) -> AgentState:
 ## Workflow Structure
 The graph flows sequentially from query initialization to LLM processing, and finally to beautiful rendering.
 
-![Lesson 6 Graph](../../assignment_3_graph.png) 
-*(Note: Re-using visualization pattern from previous lessons)*
+![Lesson 6 Graph](../../assignment_4_graph.png) 
 
 ## Lessons Learned
 - **Environmental Variables**: Using `.env` files to manage secrets like `OPENAI_API_KEY`.

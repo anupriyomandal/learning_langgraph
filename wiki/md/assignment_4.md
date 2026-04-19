@@ -54,7 +54,7 @@ for chunk in stream:
 ## Workflow Visualization
 The loop cycle: `Input` -> `Router` -> `Streaming LLM` -> `Input`.
 
-![Assignment 4 Graph](../../assignment_3_graph.png) 
+![Assignment 4 Graph](../../assignment_4_graph.png) 
 *(Note: Visual pattern continues to evolve)*
 
 ## Lessons Learned
