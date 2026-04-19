@@ -12,26 +12,20 @@ graph TD
     MN[model_node - The Brain]
     TN[tool_node - The Hands]
     ROUTER{tools_condition - Router}
-    
-    %% Spacer Nodes for Padding
-    L_SPACER[ ]
-    R_SPACER[ ]
 
-    %% Flow and Labels
-    START -- "Initial Query" --> MN
+    %% Main Flow (Perfectly Centered)
+    START --> MN
+    MN --> ROUTER
     
-    MN -- "AI Message" --> ROUTER
-    
+    %% Branching
     ROUTER -- "Has Tool Calls" --> TN
     ROUTER -- "Direct Answer" --> END
     
-    TN -- "Tool Message" --> MN
+    %% Feedback Loop
+    TN --> MN
 
     %% Styling
     subgraph Reasoning_Action_Loop [Reasoning and Action Loop]
-        direction TB
-        L_SPACER ~~~ MN
-        MN ~~~ R_SPACER
         MN
         ROUTER
         TN
@@ -44,10 +38,6 @@ graph TD
     style TN fill:#0d9488,stroke:#fff,stroke-width:2px,color:#fff
     style ROUTER fill:#e11d48,stroke:#fff,stroke-width:2px,color:#fff
     
-    %% Spacer Styling (Invisible)
-    style L_SPACER fill:none,stroke:none
-    style R_SPACER fill:none,stroke:none
-
     %% Subgraph Styling
     style Reasoning_Action_Loop fill:#000,stroke:#cbd5e1,stroke-dasharray: 5 5,color:#fff
 ```
