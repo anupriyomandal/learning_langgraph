@@ -25,6 +25,8 @@ Welcome to the LangGraph learning repository wiki. This wiki tracks the progress
 - [Conditional Edges](md/concept_conditional_edges.md)
 - [Graph Visualization](md/concept_visualization.md)
 - [Loops (Recurrent Graphs)](md/concept_loops.md)
+- [Message Types](md/concept_messages.md) - BaseMessage, SystemMessage, ToolMessage.
+- [add_messages (Reducer)](md/concept_add_messages.md) - Managing chat history state.
 
 ## Reference
 - [StateGraph API Reference](md/stategraph_api.md)
