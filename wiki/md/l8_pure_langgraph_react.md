@@ -49,6 +49,11 @@ The logic remains identical to the ReAct pattern:
 - The tradeoff for "Pure" implementation is more boilerplate code for tool parsing and state merging.
 
 ---
+## Building On
+This lesson is a direct extension of:
+- **[Lesson 7: ReAct Agent](l7_ReAct_agent.md)**: The core Reason + Act pattern.
+- **[Lesson 6: LLM Integration](l6_integrating_llm.md)**: Understanding how LLMs drive graph logic.
+
 ## Related Concepts
 - [ReAct Framework](concept_react_agent.md)
 - [Message Types](concept_messages.md)

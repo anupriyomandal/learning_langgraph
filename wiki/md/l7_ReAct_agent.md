@@ -44,6 +44,12 @@ To improve developer visibility into the ReAct process, we implemented a colored
 - [bold green]AI Response[/bold green]: The final answer provided to the user.
 
 ---
+## Building On
+This lesson expands upon several previous concepts:
+- **[Lesson 6: LLM Integration](l6_integrating_llm.md)**: Using ChatOpenAI and binding tools.
+- **[Assignment 4: Interactive Chatbot](assignment_4.md)**: Managing persistent message history.
+- **[Concept: Loops](concept_loops.md)**: implementing recurrent feedback cycles.
+
 ## Related Concepts
 - [Nodes vs. Edges](concept_nodes_vs_edges.md)
 - [State Management](stategraph_api.md)
