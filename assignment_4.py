@@ -112,8 +112,10 @@ def visualize_graph():
         print(f"PNG Generation failed: {e}")
     
     # Always Print ASCII
-    print("\nWorkflow Structure (ASCII):")
-    app.get_graph().print_ascii()
+    print("\nWorkflow Structure:")
+    ascii_graph = app.get_graph().draw_ascii()
+    from rich.panel import Panel
+    console.print(Panel(ascii_graph, title="[bold magenta]LangGraph Workflow[/bold magenta]", border_style="bright_blue", expand=False))
 
 if __name__ == "__main__":
     visualize_graph()
