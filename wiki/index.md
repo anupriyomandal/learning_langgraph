@@ -15,7 +15,7 @@ Welcome to the LangGraph learning repository wiki. This wiki tracks the progress
 9. [Assignment 3: Automatic Higher or Lower Game](md/assignment_3.md) - Implementing search algorithms and state-driven loops.
 10. [Lesson 6: Integrating LLMs and Rich Rendering](md/l6_integrating_llm.md) - Connecting GPT-4 and enhancing terminal output with Rich.
 11. [Assignment 4: Interactive LangGraph Chatbot](md/assignment_4.md) - Building a persistent CLI chat interface with history.
-12. [Lesson 7: ReAct Agent with LangGraph](md/l7_ReAct_agent.md) - Implementing the Reason + Act pattern with tool calling.
+12. [Lesson 7: ReAct Agent with LangGraph](md/l7_ReAct_agent.md) - Implementing the Reason + Act pattern. ([Detailed Process Flow Diagram](md/l7_ReAct_agent_pfd.md))
 13. [Lesson 8: Pure LangGraph ReAct Agent](md/l8_pure_langgraph_react.py) - ReAct implementation without LangChain dependencies.
 
 ## Core Concepts
