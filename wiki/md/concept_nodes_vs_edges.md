@@ -14,7 +14,7 @@ Nodes represent the **computational steps** or units of work in your graph.
   ```
 
 ## 2. Edges (The "Paths")
-Edges define the **control flow** or the transition logic between nodes.
+Edges define the **control flow** or the transition logic between nodes. See [Edges](concept_edges.md) for a detailed breakdown.
 
 - **What they are**: They are the connections that determine which node should execute after the current one finishes.
 - **Purpose**: To route the state from one node to another.

@@ -15,6 +15,7 @@ Welcome to the LangGraph learning repository wiki. This wiki tracks the progress
 
 ## Core Concepts
 - [Nodes vs. Edges](md/concept_nodes_vs_edges.md)
+- [Edges](md/concept_edges.md)
 - [State Management](md/concept_state.md)
 - [StateGraph & Compilation](md/concept_stategraph.md)
 - [Conditional Edges](md/concept_conditional_edges.md)
