@@ -25,30 +25,38 @@ def get_query(state: AgentState) -> AgentState:
     return state
 
 def gpt_reponse(state: AgentState) -> AgentState:
-    """Generates a response using OpenAI, maintaining history."""
+    """Generates a streaming response using OpenAI, maintaining history."""
     # Prepare messages including history
     messages = state.get('messages', [])
     messages.append({"role": "user", "content": state['query']})
     
-    # Call LLM
-    resp = client.chat.completions.create(
+    console.print("\n[bold green]Assistant:[/bold green]")
+    
+    # Call LLM with streaming enabled
+    stream = client.chat.completions.create(
         model="gpt-4o-mini",
-        messages=messages
+        messages=messages,
+        stream=True
     )
     
-    answer = resp.choices[0].message.content
-    state['response'] = answer
+    full_response = ""
+    for chunk in stream:
+        if chunk.choices[0].delta.content:
+            content = chunk.choices[0].delta.content
+            full_response += content
+            print(content, end="", flush=True)
+    
+    print() # New line after stream ends
+    state['response'] = full_response
     
     # Update history in state
-    messages.append({"role": "assistant", "content": answer})
+    messages.append({"role": "assistant", "content": full_response})
     state['messages'] = messages
     return state
 
 def display_response(state: AgentState) -> AgentState:
-    """Renders the response in the terminal."""
-    console.print("\n[bold green]Assistant:[/bold green]")
-    md = Markdown(state['response'])
-    console.print(md)
+    """Renders the final response (redundant now but kept for state sync)."""
+    # We already printed during streaming, so this node just ensures state consistency
     return state
 
 def router(state: AgentState) -> str:
