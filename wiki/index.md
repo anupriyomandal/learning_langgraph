@@ -12,6 +12,7 @@ Welcome to the LangGraph learning repository wiki. This wiki tracks the progress
 6. [Lesson 4: Conditional Edges and Routing](md/l4_conditional_node.md) - Branching logic and dynamic node selection.
 7. [Assignment 2: Multi-Stage Routing](md/assignment_2.md) - Chaining multiple routers and operation nodes.
 8. [Lesson 5: Looping Graphs](md/l5_looping_graphs.md) - Creating recurrent workflows and termination conditions.
+9. [Assignment 3: Automatic Higher or Lower Game](md/assignment_3.md) - Implementing search algorithms and state-driven loops.
 
 ## Core Concepts
 - [Nodes vs. Edges](md/concept_nodes_vs_edges.md)

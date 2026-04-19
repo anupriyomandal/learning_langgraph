@@ -43,4 +43,4 @@ The graph structure shows a clear cycle:
 - [Graph Visualization](concept_visualization.md)
 
 ---
-[Back: Assignment 2: Multi-Stage Routing](assignment_2.md) | [Next: TBD](../index.md)
+[Back: Assignment 2: Multi-Stage Routing](assignment_2.md) | [Next: Assignment 3: Automatic Higher or Lower Game](assignment_3.md)

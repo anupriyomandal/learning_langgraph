@@ -17,7 +17,7 @@ def greeting(state: AgentState) -> AgentState:
 
 def random_number(state: AgentState) -> AgentState:
     """Generates a random number and adds it to the list."""
-    print("--- Generating random number ---")
+    print("--- Generating random number --- Loop: ", state['count'])
     state['numbers'].append(random.randint(1, 100))
     state['count'] += 1
     return state
