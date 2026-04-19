@@ -282,10 +282,14 @@
                     <div class="card">
                         <h3>Nodes</h3>
                         <p>The "Workers". Discrete units of computation that transform the state.</p>
+                        <pre><code class="language-python"># Define a Node
+workflow.add_node("worker", my_func)</code></pre>
                     </div>
                     <div class="card">
                         <h3>Edges</h3>
                         <p>The "Paths". Transition logic that defines the flow of control.</p>
+                        <pre><code class="language-python"># Define an Edge
+workflow.add_edge("start", "worker")</code></pre>
                     </div>
                 </div>
             </div>
