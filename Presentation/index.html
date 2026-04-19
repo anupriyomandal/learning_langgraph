@@ -261,7 +261,7 @@
 <body>
 
     <div class="progress" id="progress"></div>
-    <div class="slide-number" id="counter">01 / 07</div>
+    <div class="slide-number" id="counter">01 / 09</div>
 
     <div class="deck" id="deck">
         <!-- Slide 1: Intro -->
@@ -340,11 +340,47 @@
             </div>
         </section>
 
-        <!-- Slide 6: Assignment 3 -->
+        <!-- Slide 6: Anatomy of a Loop -->
+        <section class="slide">
+            <div class="content">
+                <div class="chip">Deep Dive</div>
+                <h2>Anatomy of a Loop</h2>
+                <p>A loop is created when an edge points back to a previously visited node.</p>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Recurrent Path</h3>
+                        <p>The graph flow "recurs" back to an earlier stage, often via a conditional edge.</p>
+                    </div>
+                    <div class="card">
+                        <h3>State Evolution</h3>
+                        <p>Each iteration must update the state to move closer to a goal or termination.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Convergence & Termination -->
+        <section class="slide">
+            <div class="content">
+                <div class="chip">Stability</div>
+                <h2>Guarding the Loop</h2>
+                <p>To prevent infinite execution, every loop needs reliable exit ramps.</p>
+                <pre><code class="language-python">def should_continue(state):
+    if state["done"]: return "end"
+    if state["count"] > MAX: return "end"
+    return "loop"</code></pre>
+                <ul>
+                    <li><strong>Goal-Based</strong>: Found the answer or finished the task.</li>
+                    <li><strong>Safety-Based</strong>: Maximum iterations or timeout reached.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 8: Case Study: Guessing Game -->
         <section class="slide">
             <div class="content">
                 <div class="chip">Self-Correcting Loops</div>
-                <h2>Case Study: Guessing Game</h2>
+                <h2>Assignment 3</h2>
                 <p>Implementing a Binary Search algorithm using a recurrent graph structure.</p>
                 <div class="grid">
                     <div class="card">
@@ -359,7 +395,7 @@
             </div>
         </section>
 
-        <!-- Slide 7: Visualization -->
+        <!-- Slide 9: Visualization -->
         <section class="slide">
             <div class="content">
                 <div class="chip">Debugging</div>
