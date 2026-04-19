@@ -21,3 +21,6 @@ Welcome to the LangGraph learning repository wiki. This wiki tracks the progress
 - [Conditional Edges](md/concept_conditional_edges.md)
 - [Graph Visualization](md/concept_visualization.md)
 - [Loops (Recurrent Graphs)](md/concept_loops.md)
+
+## Reference
+- [StateGraph API Reference](md/stategraph_api.md)
