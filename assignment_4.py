@@ -5,12 +5,20 @@ from dotenv import load_dotenv
 from openai import OpenAI
 from rich.console import Console
 from rich.markdown import Markdown
+from rich.theme import Theme
 from langgraph.graph import StateGraph, START, END
 
 # Load environment variables
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-console = Console()
+
+# Custom theme for Markdown rendering
+custom_theme = Theme({
+    "markdown.strong": "bold cyan",
+    "markdown.h1": "bold magenta",
+    "markdown.h2": "bold blue"
+})
+console = Console(theme=custom_theme)
 
 class AgentState(TypedDict):
     query: str
