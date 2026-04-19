@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LangGraph: Advanced Workflows</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #121212;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent: #ffffff;
+            --border: rgba(255, 255, 255, 0.1);
+            --glass: rgba(255, 255, 255, 0.03);
+            --transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* Presentation Container */
+        .deck {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            scroll-snap-type: x mandatory;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .deck::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Slide Styles */
+        .slide {
+            min-width: 100vw;
+            height: 100vh;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem;
+            position: relative;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.02) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .content {
+            max-width: 1000px;
+            width: 100%;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+
+        .slide.active .content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        li {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        /* Code Blocks */
+        pre {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1rem;
+            overflow-x: auto;
+            margin-top: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        code {
+            color: #d1d1d1;
+        }
+
+        /* Components */
+        .chip {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            background: var(--glass);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--surface);
+            padding: 2.5rem;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            border-color: rgba(255,255,255,0.3);
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Navigation Controls */
+        .controls {
+            position: fixed;
+            bottom: 3rem;
+            right: 3rem;
+            display: flex;
+            gap: 1.5rem;
+            z-index: 100;
+        }
+
+        .btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background: var(--text-primary);
+            color: var(--bg);
+        }
+
+        .progress {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: var(--accent);
+            width: 0%;
+            transition: width 0.3s ease;
+            z-index: 101;
+        }
+
+        /* Slide Number */
+        .slide-number {
+            position: fixed;
+            bottom: 3.5rem;
+            left: 3rem;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="progress" id="progress"></div>
+    <div class="slide-number" id="counter">01 / 06</div>
+
+    <div class="deck" id="deck">
+        <!-- Slide 1: Intro -->
+        <section class="slide active">
+            <div class="content">
+                <div class="chip">Learning LangGraph</div>
+                <h1>Advanced<br>Stateful<br>Workflows</h1>
+                <p>A comprehensive guide to building resilient, complex agentic systems with LangGraph.</p>
+            </div>
+        </section>
+
+        <!-- Slide 2: Core Concepts -->
+        <section class="slide">
+            <div class="content">
+                <div class="chip">Architecture</div>
+                <h2>Nodes vs. Edges</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Nodes</h3>
+                        <p>The "Workers". Discrete units of computation that transform the state.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Edges</h3>
+                        <p>The "Paths". Transition logic that defines the flow of control.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: State Management -->
+        <section class="slide">
+            <div class="content">
+                <div class="chip">The Heart of LangGraph</div>
+                <h2>State Management</h2>
+                <p>LangGraph revolves around a shared `State` object that is passed from node to node.</p>
+                <pre><code>class AgentState(TypedDict):
+    query: str
+    results: List[str]
+    count: int</code></pre>
+                <ul>
+                    <li>Persisted across transitions</li>
+                    <li>Easily trackable and debuggable</li>
+                    <li>Type-safe with TypedDict</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 4: Conditional Routing -->
+        <section class="slide">
+            <div class="content">
+                <div class="chip">Dynamic Flow</div>
+                <h2>Branching & Routing</h2>
+                <p>Conditional edges allow the graph to make decisions dynamically based on the state.</p>
+                <pre><code>workflow.add_conditional_edges(
+    "router",
+    decider_func,
+    {
+        "success": "end_node",
+        "retry": "agent_node"
+    }
+)</code></pre>
+            </div>
+        </section>
+
+        <!-- Slide 5: Looping -->
+        <section class="slide">
+            <div class="content">
+                <div class="chip">Iterative Logic</div>
+                <h2>Recurrent Graphs</h2>
+                <p>Loops allow for iterative behaviors, crucial for self-correcting agents and feedback cycles.</p>
+                <ul>
+                    <li>Termination conditions are mandatory.</li>
+                    <li>Enables "Agentic" reasoning patterns.</li>
+                    <li>State updates drive loop progression.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 6: Visualization -->
+        <section class="slide">
+            <div class="content">
+                <div class="chip">Debugging</div>
+                <h2>Visualization</h2>
+                <p>Modern tools to see what you've built.</p>
+                <div class="grid">
+                    <div class="card">
+                        <h3>ASCII</h3>
+                        <p>Quick terminal check: <code>app.get_graph().print_ascii()</code></p>
+                    </div>
+                    <div class="card">
+                        <h3>Mermaid PNG</h3>
+                        <p>High-res diagrams: <code>app.get_graph().draw_mermaid_png()</code></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="controls">
+        <div class="btn" onclick="prevSlide()">←</div>
+        <div class="btn" onclick="nextSlide()">→</div>
+    </div>
+
+    <script>
+        const deck = document.getElementById('deck');
+        const slides = document.querySelectorAll('.slide');
+        const progress = document.getElementById('progress');
+        const counter = document.getElementById('counter');
+        let currentSlide = 0;
+
+        function updateState() {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === currentSlide);
+            });
+            const p = ((currentSlide + 1) / slides.length) * 100;
+            progress.style.width = `${p}%`;
+            counter.innerText = `${String(currentSlide + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                deck.scrollTo({ left: currentSlide * window.innerWidth, behavior: 'smooth' });
+                updateState();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                deck.scrollTo({ left: currentSlide * window.innerWidth, behavior: 'smooth' });
+                updateState();
+            }
+        }
+
+        // Handle keyboard navigation
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        // Handle scroll syncing
+        deck.addEventListener('scroll', () => {
+            const index = Math.round(deck.scrollLeft / window.innerWidth);
+            if (index !== currentSlide) {
+                currentSlide = index;
+                updateState();
+            }
+        });
+    </script>
+</body>
+</html>

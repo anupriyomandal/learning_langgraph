@@ -24,3 +24,6 @@ Welcome to the LangGraph learning repository wiki. This wiki tracks the progress
 
 ## Reference
 - [StateGraph API Reference](md/stategraph_api.md)
+
+## Assets
+- [Modern Presentation (HTML)](../Presentation/index.html)
