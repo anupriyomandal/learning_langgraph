@@ -14,6 +14,7 @@ Welcome to the LangGraph learning repository wiki. This wiki tracks the progress
 8. [Lesson 5: Looping Graphs](md/l5_looping_graphs.md) - Creating recurrent workflows and termination conditions.
 
 ## Core Concepts
+- [Nodes vs. Edges](md/concept_nodes_vs_edges.md)
 - [State Management](md/concept_state.md)
 - [StateGraph & Compilation](md/concept_stategraph.md)
 - [Conditional Edges](md/concept_conditional_edges.md)

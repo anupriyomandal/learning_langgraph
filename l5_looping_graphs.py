@@ -24,7 +24,7 @@ def random_number(state: AgentState) -> AgentState:
 
 def decide_next_node(state: AgentState) -> AgentState:
     """Decides the next node based on the count."""
-    if state['count'] < 5:
+    if state['count'] <= 5:
         return "add_number"
     else:
         return "end"
@@ -74,7 +74,7 @@ if __name__ == '__main__':
     
     # 5. Invoke the Graph and see the transformation
     print("\nInvoking graph...")
-    state = AgentState(**{'name': '', 'numbers': [], 'count': 0})
+    state = AgentState(**{'name': 'Anupriyo', 'numbers': [], 'count': 0})
     result = app.invoke(state)
     
     print("\n--- Final State ---")
