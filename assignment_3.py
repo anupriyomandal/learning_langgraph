@@ -103,7 +103,8 @@ if __name__ == '__main__':
             f.write(png_data)
         print("Success: Diagram saved to 'assignment_3_graph.png'")
     except Exception:
-        app.get_graph().print_ascii()
+        pass
+    app.get_graph().print_ascii()
     
     # 6. Run the Game
     print("\nStarting the Game...")
