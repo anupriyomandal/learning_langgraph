@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'dark' });</script>
     <style>
         :root {
             --bg: #ffffff;
@@ -261,7 +263,7 @@
 <body>
 
     <div class="progress" id="progress"></div>
-    <div class="slide-number" id="counter">01 / 15</div>
+    <div class="slide-number" id="counter">01 / 18</div>
 
     <div class="deck" id="deck">
         <!-- Slide 1: Intro -->
@@ -535,6 +537,66 @@ workflow.add_edge("start", "worker")</code></pre>
                         <h3>Mermaid PNG</h3>
                         <p>High-res diagrams: <code class="language-python">app.get_graph().draw_mermaid_png()</code></p>
                     </div>
+                </div>
+            </div>
+        <!-- Slide 16: PFD ReAct -->
+        <section class="slide">
+            <div class="content">
+                <div class="chip">Workflow Architecture</div>
+                <h2>Process Flow: ReAct (L7)</h2>
+                <div class="mermaid" style="background: rgba(0,0,0,0.2); padding: 2rem; border-radius: 12px;">
+                graph TD
+                    START((START)) --> MN[model_node]
+                    MN --> ROUTER{Router}
+                    ROUTER -- "Tools" --> TN[tool_node]
+                    TN --> MN
+                    ROUTER -- "Done" --> END((END))
+                    style START fill:#9333ea,color:#fff
+                    style END fill:#9333ea,color:#fff
+                    style MN fill:#4f46e5,color:#fff
+                    style TN fill:#0d9488,color:#fff
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 17: Project Drafter -->
+        <section class="slide">
+            <div class="content">
+                <div class="chip">Advanced Application</div>
+                <h2>Lesson 9: Project Drafter</h2>
+                <p>An autonomous agent that iteratively builds and saves documents through user feedback.</p>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Human-in-the-Loop</h3>
+                        <p>Using <code>app.invoke</code> to handle reasoning cycles atomically while the user drives the loop.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Rich Layouts</h3>
+                        <p>Designing high-fidelity dashboards with persistent draft previews using the <code>Layout</code> engine.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 18: PFD Project Drafter -->
+        <section class="slide">
+            <div class="content">
+                <div class="chip">External vs Internal</div>
+                <h2>Process Flow: Drafter (L9)</h2>
+                <div class="mermaid" style="background: rgba(0,0,0,0.2); padding: 2rem; border-radius: 12px;">
+                graph TD
+                    LOOP[Human Loop] --> UI[Rich UI]
+                    UI --> INVOKE[app.invoke]
+                    subgraph Internal Graph
+                        INVOKE --> MN[model_node]
+                        MN --> TN[tool_node]
+                        TN --> MN
+                    end
+                    MN --> LOOP
+                    style LOOP fill:#e11d48,color:#fff
+                    style UI fill:#9333ea,color:#fff
+                    style MN fill:#4f46e5,color:#fff
+                    style TN fill:#0d9488,color:#fff
                 </div>
             </div>
         </section>

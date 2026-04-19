@@ -16,7 +16,8 @@ Welcome to the LangGraph learning repository wiki. This wiki tracks the progress
 10. [Lesson 6: Integrating LLMs and Rich Rendering](md/l6_integrating_llm.md) - Connecting GPT-4 and enhancing terminal output with Rich.
 11. [Assignment 4: Interactive LangGraph Chatbot](md/assignment_4.md) - Building a persistent CLI chat interface with history.
 12. [Lesson 7: ReAct Agent with LangGraph](md/l7_ReAct_agent.md) - Implementing the Reason + Act pattern. ([Detailed Process Flow Diagram](md/l7_ReAct_agent_pfd.md))
-13. [Lesson 8: Pure LangGraph ReAct Agent](md/l8_pure_langgraph_react.py) - ReAct implementation without LangChain dependencies.
+13. [Lesson 8: Pure LangGraph ReAct Agent](md/l8_pure_langgraph_react.md) - ReAct implementation without LangChain dependencies.
+14. [Lesson 9: Autonomous Project Drafter](md/l9_project_drafter.md) - Advanced application with external human-in-the-loop and Rich Layouts.
 
 ## Core Concepts
 - [Nodes vs. Edges](md/concept_nodes_vs_edges.md)
