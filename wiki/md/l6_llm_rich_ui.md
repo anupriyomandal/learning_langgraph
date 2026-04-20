@@ -49,4 +49,4 @@ The graph flows sequentially from query initialization to LLM processing, and fi
 - [State Management](stategraph_api.md)
 
 ---
-[Back: Assignment 3: Automatic Higher or Lower Game](assignment_3.md) | [Next: Wiki Index](../index.md)
+[Back: Assignment 3: Automatic Higher or Lower Game](a3_binary_search_game.md) | [Next: Wiki Index](../index.md)

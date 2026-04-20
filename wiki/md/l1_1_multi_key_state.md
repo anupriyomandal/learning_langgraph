@@ -13,7 +13,7 @@ class AgentState(TypedDict):
     name: str
 ```
 
-In `l1_single_node_1.py`, we provide `name` and the node updates `messages`:
+In `l1_1_multi_key_state.py`, we provide `name` and the node updates `messages`:
 ```python
 def process_node(state: AgentState) -> AgentState:
     state['messages'] = f"Hello {state['name']}"
@@ -36,8 +36,8 @@ When a node returns a dictionary, LangGraph updates the state. If the state is a
 
 ---
 ## Cross-References
-- [Lesson 1: Basics of StateGraph](01_single_node_graph.md) - Basic setup of a single node graph.
-- [State Definition](01_single_node_graph.md#1-state-definition) - How `TypedDict` is used for state.
+- [Lesson 1: Basics of StateGraph](l1_basic_node.md) - Basic setup of a single node graph.
+- [State Definition](l1_basic_node.md#1-state-definition) - How `TypedDict` is used for state.
 
 ---
-[Home](../index.md) | [Back to Lesson 1](01_single_node_graph.md)
+[Home](../index.md) | [Back to Lesson 1](l1_basic_node.md)

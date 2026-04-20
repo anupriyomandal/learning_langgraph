@@ -65,4 +65,4 @@ graph TD
 - **Atomic Execution**: The graph doesn't wait for humans; it runs until it either hits a final answer or finishes its tool sequence.
 
 ---
-[Back to Lesson 9](l9_project_drafter.md) | [Wiki Index](../index.md)
+[Back to Lesson 9](l9_drafter_external_loop.md) | [Wiki Index](../index.md)

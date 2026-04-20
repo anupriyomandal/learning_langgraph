@@ -51,12 +51,12 @@ The logic remains identical to the ReAct pattern:
 ---
 ## Building On
 This lesson is a direct extension of:
-- **[Lesson 7: ReAct Agent](l7_ReAct_agent.md)**: The core Reason + Act pattern.
-- **[Lesson 6: LLM Integration](l6_integrating_llm.md)**: Understanding how LLMs drive graph logic.
+- **[Lesson 7: ReAct Agent](l7_react_tools.md)**: The core Reason + Act pattern.
+- **[Lesson 6: LLM Integration](l6_llm_rich_ui.md)**: Understanding how LLMs drive graph logic.
 
 ## Related Concepts
 - [ReAct Framework](concept_react_agent.md)
 - [Message Types](concept_messages.md)
 
 ---
-[Back: Lesson 7: ReAct Agent](l7_ReAct_agent.md) | [Next: Wiki Index](../index.md)
+[Back: Lesson 7: ReAct Agent](l7_react_tools.md) | [Next: Wiki Index](../index.md)

@@ -4,20 +4,20 @@ Welcome to the LangGraph learning repository wiki. This wiki tracks the progress
 
 ## Lessons
 
-1. [Lesson 1: Single Node Graph](md/01_single_node_graph.md) - Basics of State, Nodes, and Graph structure.
-2. [Lesson 1.1: Multiple State Keys](md/l1_single_node_1.md) - Using multiple keys in TypedDict and `set_entry_point`.
-3. [Lesson 2: Multiple Inputs and List Types](md/l2_single_node_2.md) - Using complex types like `List` and performing aggregations.
-4. [Assignment 1: Multi-Operation Node](md/assignment_1.md) - Applying logic within a single node.
-5. [Lesson 3: Sequential Graphs and Visualization](md/l3_sequential_nodes.md) - Multiple nodes and ASCII diagrams.
-6. [Lesson 4: Conditional Edges and Routing](md/l4_conditional_node.md) - Branching logic and dynamic node selection.
-7. [Assignment 2: Multi-Stage Routing](md/assignment_2.md) - Chaining multiple routers and operation nodes.
-8. [Lesson 5: Looping Graphs](md/l5_looping_graphs.md) - Creating recurrent workflows and termination conditions.
-9. [Assignment 3: Automatic Higher or Lower Game](md/assignment_3.md) - Implementing search algorithms and state-driven loops.
-10. [Lesson 6: Integrating LLMs and Rich Rendering](md/l6_integrating_llm.md) - Connecting GPT-4 and enhancing terminal output with Rich.
-11. [Assignment 4: Interactive LangGraph Chatbot](md/assignment_4.md) - Building a persistent CLI chat interface with history.
-12. [Lesson 7: ReAct Agent with LangGraph](md/l7_ReAct_agent.md) - Implementing the Reason + Act pattern. ([Detailed Process Flow Diagram](md/l7_ReAct_agent_pfd.md))
-13. [Lesson 8: Pure LangGraph ReAct Agent](md/l8_pure_langgraph_react.md) - ReAct implementation without LangChain dependencies.
-14. [Lesson 9: Autonomous Project Drafter](md/l9_project_drafter.md) - Advanced application with external human-in-the-loop and Rich Layouts.
+1. [Lesson 1: Basic Graph Node](md/l1_basic_node.md) - Basics of State, Nodes, and Graph structure.
+2. [Lesson 1.1: Multiple State Keys](md/l1_1_multi_key_state.md) - Using multiple keys in TypedDict and `set_entry_point`.
+3. [Lesson 2: Multiple Inputs and List Types](md/l2_list_state_agg.md) - Using complex types like `List` and performing aggregations.
+4. [Assignment 1: Multi-Operation Node](md/a1_logic_nodes.md) - Applying logic within a single node.
+5. [Lesson 3: Sequential Graphs and Visualization](md/l3_sequential_flow.md) - Multiple nodes and ASCII diagrams.
+6. [Lesson 4: Conditional Edges and Routing](md/l4_conditional_routing.md) - Branching logic and dynamic node selection.
+7. [Assignment 2: Multi-Stage Routing](md/a2_chained_routers.md) - Chaining multiple routers and operation nodes.
+8. [Lesson 5: Looping Graphs](md/l5_recurrent_loops.md) - Creating recurrent workflows and termination conditions.
+9. [Assignment 3: Automatic Higher or Lower Game](md/a3_binary_search_game.md) - Implementing search algorithms and state-driven loops.
+10. [Lesson 6: Integrating LLMs and Rich Rendering](md/l6_llm_rich_ui.md) - Connecting GPT-4 and enhancing terminal output with Rich.
+11. [Assignment 4: Interactive LangGraph Chatbot](md/a4_interactive_chatbot.md) - Building a persistent CLI chat interface with history.
+12. [Lesson 7: ReAct Agent with LangGraph](md/l7_react_tools.md) - Implementing the Reason + Act pattern. ([Detailed Process Flow Diagram](md/l7_react_tools_pfd.md))
+13. [Lesson 8: Pure LangGraph ReAct Agent](md/l8_pure_react_no_langchain.md) - ReAct implementation without LangChain dependencies.
+14. [Lesson 9: Autonomous Project Drafter](md/l9_drafter_external_loop.md) - Advanced application with external human-in-the-loop and Rich Layouts.
 
 ## Core Concepts
 - [Nodes vs. Edges](md/concept_nodes_vs_edges.md)

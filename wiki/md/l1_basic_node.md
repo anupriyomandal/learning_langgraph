@@ -49,7 +49,7 @@ workflow.add_edge("process_node", END)
 ```
 
 #### Alternative Methods
-As seen in [Lesson 1.1](l1_single_node_1.md), you can also use:
+As seen in [Lesson 1.1](l1_1_multi_key_state.md), you can also use:
 - `workflow.set_entry_point("node_name")`
 - `workflow.set_finish_point("node_name")`
 
@@ -71,4 +71,4 @@ result = app.invoke({'messages': 'User'})
 - **Legacy/Invalid Methods**: Avoid using non-existent methods like `.start_node()` or `.end_node()`. Use the edge system with `START` and `END` instead.
 
 ---
-[Home](../index.md) | [Next Lesson: Multiple State Keys](l1_single_node_1.md)
+[Home](../index.md) | [Next Lesson: Multiple State Keys](l1_1_multi_key_state.md)

@@ -32,4 +32,4 @@ LangGraph supports native breakpoints where you can:
 - **Modify State**: A human can "edit" the graph's memory before it resumes.
 
 ---
-[Related: Lesson 9: Project Drafter](l9_project_drafter.md) | [Related: State Management](concept_state.md)
+[Related: Lesson 9: Project Drafter](l9_drafter_external_loop.md) | [Related: State Management](concept_state.md)

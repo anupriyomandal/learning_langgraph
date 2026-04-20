@@ -12,8 +12,8 @@ The wiki is stored in the `wiki/` folder. All detailed documentation should resi
 - **Index**: Always keep `wiki/index.md` updated with the latest lessons.
 - **Cross-Referencing**: When adding a new lesson, check existing `.md` files in `wiki/md/` for related concepts and add cross-references. **Every new lesson must include links to the previous lessons it builds upon.**
 - **Naming Convention**: 
-    - Source code: `l<lesson_number>_<topic>.py` (e.g., `l1_single_node.py`).
-    - Wiki files: `l<lesson_number>_<topic>.md` (e.g., `l1_single_node.md`).
+    - Source code: `l<lesson_number>_<descriptive_topic>.py` (e.g., `l1_basic_node.py`).
+    - Wiki files: `l<lesson_number>_<descriptive_topic>.md` (e.g., `l1_basic_node.md`).
     - Concept files: `concept_<name>.md` (e.g., `concept_state.md`).
 
 ### 2. Documenting Concepts

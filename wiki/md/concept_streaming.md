@@ -29,4 +29,4 @@ Yields intermediate values as the graph executes.
 | **Complexity** | Simple | Requires iteration logic |
 
 ---
-[Related: StateGraph & Compilation](concept_stategraph.md) | [Related: Lesson 6: LLM Integration](l6_integrating_llm.md)
+[Related: StateGraph & Compilation](concept_stategraph.md) | [Related: Lesson 6: LLM Integration](l6_llm_rich_ui.md)

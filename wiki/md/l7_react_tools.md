@@ -46,8 +46,8 @@ To improve developer visibility into the ReAct process, we implemented a colored
 ---
 ## Building On
 This lesson expands upon several previous concepts:
-- **[Lesson 6: LLM Integration](l6_integrating_llm.md)**: Using ChatOpenAI and binding tools.
-- **[Assignment 4: Interactive Chatbot](assignment_4.md)**: Managing persistent message history.
+- **[Lesson 6: LLM Integration](l6_llm_rich_ui.md)**: Using ChatOpenAI and binding tools.
+- **[Assignment 4: Interactive Chatbot](a4_interactive_chatbot.md)**: Managing persistent message history.
 - **[Concept: Loops](concept_loops.md)**: implementing recurrent feedback cycles.
 
 ## Related Concepts
@@ -56,4 +56,4 @@ This lesson expands upon several previous concepts:
 - [Loops (Recurrent Graphs)](concept_loops.md)
 
 ---
-[Back: Assignment 4: Interactive Chatbot](assignment_4.md) | [Next: Wiki Index](../index.md)
+[Back: Assignment 4: Interactive Chatbot](a4_interactive_chatbot.md) | [Next: Wiki Index](../index.md)

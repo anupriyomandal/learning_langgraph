@@ -88,4 +88,4 @@ This pattern is the foundation for **AI Agents**. In complex systems, an agent m
 - [Nodes vs. Edges](concept_nodes_vs_edges.md)
 
 ---
-[Back: Lesson 5: Looping Graphs](l5_looping_graphs.md) | [Next: Wiki Index](../index.md)
+[Back: Lesson 5: Looping Graphs](l5_recurrent_loops.md) | [Next: Wiki Index](../index.md)

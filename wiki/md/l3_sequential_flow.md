@@ -65,8 +65,8 @@ The `print_ascii()` method produces a clear diagram of the flow:
 ## Cross-References
 - [State Management Concepts](concept_state.md)
 - [Graph and Compilation Concepts](concept_stategraph.md)
-- [Lesson 1: Basics of StateGraph](01_single_node_graph.md) - Basic setup of a single node graph.
-- [Assignment 1](assignment_1.md) - Moving complex logic into a single node vs. splitting it into multiple nodes.
+- [Lesson 1: Basics of StateGraph](l1_basic_node.md) - Basic setup of a single node graph.
+- [Assignment 1](a1_logic_nodes.md) - Moving complex logic into a single node vs. splitting it into multiple nodes.
 
 ---
-[Home](../index.md) | [Back to Assignment 1](assignment_1.md) | [Next Lesson: (TBD)](#)
+[Home](../index.md) | [Back to Assignment 1](a1_logic_nodes.md) | [Next Lesson: (TBD)](#)

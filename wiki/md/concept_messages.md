@@ -28,7 +28,7 @@ A specific message type used to pass the results of a tool execution back to the
 ---
 ## Related Concepts
 - [add_messages Reducer](concept_add_messages.md)
-- [ReAct Agent](l7_ReAct_agent.md)
+- [ReAct Agent](l7_react_tools.md)
 
 ---
 [Back: Wiki Index](../index.md)

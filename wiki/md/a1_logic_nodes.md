@@ -36,7 +36,7 @@ user_input = {
 ```
 
 ## Cross-References
-- [Lesson 2: Multiple Inputs and List Types](l2_single_node_2.md) - Similar use of lists and multiple state keys.
+- [Lesson 2: Multiple Inputs and List Types](l2_list_state_agg.md) - Similar use of lists and multiple state keys.
 
 ---
-[Home](../index.md) | [Back to Lesson 2](l2_single_node_2.md)
+[Home](../index.md) | [Back to Lesson 2](l2_list_state_agg.md)

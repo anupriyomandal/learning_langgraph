@@ -44,9 +44,9 @@ The graph follows a classic **ReAct** pattern but exits to the user when it requ
 ---
 ## Building On
 This project is built upon:
-- **[Lesson 7: ReAct Agent](l7_ReAct_agent.md)**: The underlying reasoning pattern.
-- **[Lesson 6: Rich Integration](l6_integrating_llm.md)**: Enhancing terminal output.
-- **[Assignment 4: Chatbot](assignment_4.md)**: Persistent CLI interaction.
+- **[Lesson 7: ReAct Agent](l7_react_tools.md)**: The underlying reasoning pattern.
+- **[Lesson 6: Rich Integration](l6_llm_rich_ui.md)**: Enhancing terminal output.
+- **[Assignment 4: Chatbot](a4_interactive_chatbot.md)**: Persistent CLI interaction.
 
 ## Related Concepts
 - [State Management](concept_state.md)
@@ -54,4 +54,4 @@ This project is built upon:
 - [add_messages (Reducer)](concept_add_messages.md)
 
 ---
-[Back: Lesson 8: Pure LangGraph ReAct](l8_pure_langgraph_react.md) | [Next: Wiki Index](../index.md)
+[Back: Lesson 8: Pure LangGraph ReAct](l8_pure_react_no_langchain.md) | [Next: Wiki Index](../index.md)

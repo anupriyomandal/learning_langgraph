@@ -65,7 +65,7 @@ The loop cycle: `Input` -> `Router` -> `Streaming LLM` -> `Input`.
 ---
 ## Related Concepts
 - [Loops (Recurrent Graphs)](concept_loops.md)
-- [Integrating LLMs](l6_integrating_llm.md)
+- [Integrating LLMs](l6_llm_rich_ui.md)
 
 ---
-[Back: Lesson 6: Integrating LLMs](l6_integrating_llm.md) | [Next: Wiki Index](../index.md)
+[Back: Lesson 6: Integrating LLMs](l6_llm_rich_ui.md) | [Next: Wiki Index](../index.md)

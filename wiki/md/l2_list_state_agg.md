@@ -34,8 +34,8 @@ result = app.invoke({'numbers': [1, 2, 3], 'name': 'Anupriyo'})
 ```
 
 ## Cross-References
-- [Lesson 1.1: Multiple State Keys](l1_single_node_1.md) - Introduction to using more than one key in `AgentState`.
-- [State Definition](01_single_node_graph.md#1-state-definition) - Basics of `TypedDict` in LangGraph.
+- [Lesson 1.1: Multiple State Keys](l1_1_multi_key_state.md) - Introduction to using more than one key in `AgentState`.
+- [State Definition](l1_basic_node.md#1-state-definition) - Basics of `TypedDict` in LangGraph.
 
 ---
-[Home](../index.md) | [Back to Lesson 1.1](l1_single_node_1.md) | [Next Lesson: (TBD)](#)
+[Home](../index.md) | [Back to Lesson 1.1](l1_1_multi_key_state.md) | [Next Lesson: (TBD)](#)

@@ -1,6 +1,6 @@
 # Process Flow Diagram: ReAct Agent (Lesson 7)
 
-This document provides a detailed breakdown of the internal workflow and state transitions within the ReAct Agent implemented in `l7_ReAct_agent.py`.
+This document provides a detailed breakdown of the internal workflow and state transitions within the ReAct Agent implemented in `l7_react_tools.py`.
 
 ## 1. High-Level Flow Chart
 
@@ -106,4 +106,4 @@ def should_continue(state : AgentState) -> str:
 4. **Final Model**: `[Human("Add 1+1"), AI(tool_call="add(1,1)"), Tool(content="2"), AI(content="The answer is 2")]`
 
 ---
-[Back to Lesson 7](l7_ReAct_agent.md) | [Wiki Index](../index.md)
+[Back to Lesson 7](l7_react_tools.md) | [Wiki Index](../index.md)
